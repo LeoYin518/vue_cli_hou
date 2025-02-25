@@ -32,3 +32,42 @@ npm install
 + src: 源码
   + App.vue：根组件
   + main.js: 单页应用的入口 js 文件，所有的 js , css 必须通过 main.js 才能生效
+
+### 路由
+vue2:使用 3 版本路由
+
+vue3:使用 4 版本路由
+```
+npm install vue-router@3
+```
+```js
+import VueRouter from "vue-router";
+import Vue from "vue";
+/* 插件 - 安装 */
+Vue.use(VueRouter);
+import Home from "@/components/Home.vue";
+
+/* 配置路由的本质：就是为组件定义访问路径 */
+const routes = [
+    {
+        path: "/home",
+        component: Home,
+    },
+    {
+        path: "/about",
+        component: () => import("@/components/About.vue"),
+    }
+]
+
+export default new VueRouter({
+    routes
+});
+```
+```js
+import router from "@/router/index.js";
+
+new Vue({
+  render: h => h(App),
+  router
+}).$mount('#app')
+```
