@@ -40,6 +40,7 @@ vue3:使用 4 版本路由
 ```
 npm install vue-router@3
 ```
+路由文件
 ```js
 import VueRouter from "vue-router";
 import Vue from "vue";
@@ -63,6 +64,7 @@ export default new VueRouter({
     routes
 });
 ```
+main.js
 ```js
 import router from "@/router/index.js";
 
@@ -70,4 +72,18 @@ new Vue({
   render: h => h(App),
   router
 }).$mount('#app')
+```
+### 路由传参
+查询字符串 query string
+```
+localhost:8081/home?id=1001&keyword=jaychou
+```
+restful 风格
+```
+localhost:8081/home/7468935497799286834
+```
+### Vuex
+vue为我们提供了一个保存数据的临时空间 store（刷新页面，数据就消失）
+```bash
+npm install vuex@3
 ```

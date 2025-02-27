@@ -3,6 +3,7 @@ import Vue from "vue";
 /* 插件 - 安装 */
 Vue.use(VueRouter);
 import Home from "@/views/Home.vue";
+import News from "@/views/News.vue";
 
 /* 配置路由的本质：就是为组件定义访问路径 */
 const routes = [
@@ -13,6 +14,12 @@ const routes = [
     {
         path: "/about",
         component: () => import("@/views/About.vue"),
+        children: [
+            {
+                path: "news",
+                component: News,
+            }
+        ]
     }
 ]
 

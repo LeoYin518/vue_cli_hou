@@ -1,11 +1,11 @@
 <script>
 export default {
-  name: "About"
+  name: "News"
 }
 </script>
 
 <template>
-  <div>关于</div>
+  <div>news组件</div>
 </template>
 
 <style scoped>
